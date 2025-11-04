@@ -1,0 +1,50 @@
+﻿using System;
+
+class Program
+{
+    static void Main()
+    {
+        // 1. Exibindo mensagens simples com WriteLine
+        Console.WriteLine("=== Bem-vindo ao programa de exemplo C# ===");
+        Console.WriteLine("Exemplo de Console.WriteLine");
+
+        // 2. Usando Write para imprimir na mesma linha
+        Console.Write("Digite seu nome: ");
+        string nome = Console.ReadLine();
+
+        Console.Write("Olá, ");
+        Console.Write(nome);
+        Console.WriteLine("! Seja bem-vindo.");
+
+        // 3. Lendo uma string
+        Console.Write("Digite sua cor favorita: ");
+        string cor = Console.ReadLine();
+        Console.WriteLine("Sua cor favorita é: " + cor);
+
+        // 4. Lendo um caractere com Console.Read()
+        Console.Write("Pressione uma tecla para continuar... ");
+        int teclaLida = Console.Read();  // lê o código ASCII
+        Console.WriteLine(); // pula linha
+        Console.WriteLine("Você pressionou: " + (char)teclaLida);
+        Console.WriteLine("Código ASCII da tecla: " + teclaLida);
+
+        // Limpar o buffer de entrada para evitar conflito com ReadLine seguinte
+        Console.ReadLine();
+
+        // 5. Lendo e somando dois números inteiros
+        Console.Write("Digite o primeiro número: ");
+        string entrada1 = Console.ReadLine();
+        int numero1 = int.Parse(entrada1);
+
+        Console.Write("Digite o segundo número: ");
+        string entrada2 = Console.ReadLine();
+        int numero2 = int.Parse(entrada2);
+
+        int soma = numero1 + numero2;
+        Console.WriteLine("A soma dos dois números é: " + soma);
+
+        // Finalização
+        Console.WriteLine("Fim do programa. Pressione qualquer tecla para sair.");
+        Console.ReadKey(); // Espera uma tecla para encerrar
+    }
+}
