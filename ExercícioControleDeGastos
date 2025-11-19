@@ -1,0 +1,95 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        int tamanhoMaximo = 0;
+        int quantidadeGastos = 0;
+
+
+        Console.Write("Máximo de gastos: ");
+        tamanhoMaximo = Convert.ToInt16(Console.ReadLine());
+
+ 
+        string[] descricoes = new string[tamanhoMaximo];
+        decimal[] valores = new decimal[tamanhoMaximo];
+
+
+        int opcao = 0;
+        do
+        {
+            exibirMenu();
+            opcao = Convert.ToInt16(Console.ReadLine());
+            switch (opcao)
+            {
+                case 1:
+                    adicionarGasto(ref descricoes, ref valores, ref quantidadeGastos, tamanhoMaximo);
+                    break;
+                case 2:
+                    listarGastos(descricoes, valores, quantidadeGastos);
+                    break;
+                case 3:
+                    calcularTotalGasto(valores, quantidadeGastos);
+                    break;
+            }
+
+ 
+
+        } while (opcao != 0);
+    }
+
+    private static void adicionarGasto(ref string[] descricoes, ref decimal[] valores, ref int quantidadeGastos, int tamanhoMaximo)
+    {
+        if (quantidadeGastos >= tamanhoMaximo)
+        {
+            Console.WriteLine("Quantidade de Gastos Atingida!!!");
+            Console.ReadKey();
+            return;
+        }
+        Console.Write("Descrição do Gasto: ");
+        descricoes[quantidadeGastos] = Console.ReadLine();
+
+ 
+
+        Console.Write("Valor do Gasto: ");
+        valores[quantidadeGastos] = Convert.ToDecimal(Console.ReadLine());
+
+ 
+
+        quantidadeGastos++;
+    }
+
+    private static void listarGastos(string[] descricoes, decimal[] valores, int quantidadeGastos)
+    {
+        for (int i = 0; i < quantidadeGastos; i++)
+        {
+            Console.WriteLine("{0} - {1}", descricoes[i], valores[i]);
+        }
+        Console.ReadKey();
+    }
+ 
+ private static void calcularTotalGasto(decimal[] valores, int quantidadeGastos)
+{
+    decimal total = 0;
+
+    for (int i = 0; i < quantidadeGastos; i++)
+    {
+        total += valores[i];
+    }
+
+    Console.WriteLine("Total gasto: R$ " + total);
+    Console.ReadKey();
+}
+
+    public static void exibirMenu()
+    {
+        Console.WriteLine("\n   Controle de Gastos");
+        Console.WriteLine("=========================");
+        Console.WriteLine("1 - Adicionar gasto");
+        Console.WriteLine("2 - Listar gastos");
+        Console.WriteLine("3 - Calcular total gasto");
+        Console.WriteLine("0 - Sair\n");
+        Console.Write("Opção: ");
+    }
+}
+
+
