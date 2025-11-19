@@ -1,0 +1,25 @@
+using System;
+class HelloWorld {
+  static void Main() {
+      Console.WriteLine("5 é par? "+isPar(5)); 
+      Console.WriteLine("6 é par? "+isPar(6));
+      int i = 5;
+      Console.WriteLine(5);
+      Console.WriteLine(i++); //i++ retorna o valor atual e só depois incrementa.
+      Console.WriteLine(++i); //++i incrementa primeiro e retorna o valor já incrementado.
+  }
+  
+  static bool isPar(int numero) {     
+      return (numero % 2 == 0);
+  }
+}
+
+//A função isPar(int numero) recebe um número inteiro e retorna true se o número for par (numero % 2 == 0), ou false caso contrário.
+
+
+
+
+
+
+
+
