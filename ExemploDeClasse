@@ -1,0 +1,33 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Carro ferrari = new Carro("Ferrari","F140",1995,"NDA-0007");
+        Carro fusca = new Carro();
+        Console.WriteLine(ferrari);
+        ferrari.ligado = true;
+    }
+}
+ 
+public class Carro
+{
+    // Atributos
+    public string fabricante;
+    public string modelo;
+    public int ano;
+    public string placa;
+    public bool ligado;
+    public decimal velocidade;
+    public Carro()
+    {
+    }
+    public Carro(string fabricante, string modelo, int ano, string placa)
+    {
+        this.fabricante = fabricante;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.placa = placa;
+        this.ligado = false;
+        this.velocidade = 0;
+    }
+}
