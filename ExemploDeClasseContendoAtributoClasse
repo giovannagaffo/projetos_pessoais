@@ -1,0 +1,136 @@
+internal class Program
+
+{
+
+    private static void Main(string[] args)
+
+    {
+
+        Carro ferrari = new Carro("Ferrari","F140",1995,"NDA-0007");
+
+        Carro fusca = new Carro();
+
+        fusca.motor = new Motor();
+
+        fusca.motor.potencia = 100;
+
+        //Console.WriteLine(ferrari);
+
+        fusca.ligar();
+
+        fusca.ligar();
+
+        fusca.desligar();
+
+        fusca.desligar();
+
+    }
+
+}
+ 
+public class Motor()
+
+{
+
+    public decimal potencia;
+
+    public decimal torque;
+
+    public string tipoCombustivel;
+
+}
+ 
+public class Carro
+
+{
+
+    // Atributos
+
+    public Motor motor;
+
+    public string fabricante;
+
+    public string modelo;
+
+    public int ano;
+
+    public string placa;
+
+    private bool ligado;
+
+    public decimal velocidade;
+
+    public Carro()
+
+    {
+
+    }
+
+    public Carro(string fabricante, string modelo, int ano, string placa)
+
+    {
+
+        this.fabricante = fabricante;
+
+        this.modelo = modelo;
+
+        this.ano = ano;
+
+        this.placa = placa;
+
+        this.ligado = false;
+
+        this.velocidade = 0;
+
+    }
+ 
+    public void ligar()
+
+    {
+
+        if (ligado)
+
+        {
+
+            Console.WriteLine("Carro já está ligado!");
+
+        }
+
+        else
+
+        {
+
+            ligado = true;
+
+            Console.WriteLine("Carro ligado");
+
+        }
+
+    }
+
+    public void desligar()
+
+    {
+
+        if (!ligado) // desligado
+
+        {
+
+            Console.WriteLine("Carro já está desligado!");
+
+        }
+
+        else
+
+        {
+
+            ligado = false;
+
+            Console.WriteLine("Carro desligado");
+
+        }
+
+    }
+ 
+}
+ 
